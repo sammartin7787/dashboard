@@ -1,0 +1,66 @@
+<div ng-controller="TableCtrl">
+    <div class="panel-body">
+        <table class="table table-hover table-striped" id="user_table" >
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>User Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+                <th>Location</th>
+                <th>Time Subscribed</th>
+                <th>Google Maps Location</th>
+                <th>Lead Score</th>
+                <th>Interests</th>
+                <th>Education</th>
+                <th>Occupation</th>
+                <th>Home Owner Status</th>
+                <th>Children</th>
+                <th>Household Income</th>
+                <th>Marital Status</th>
+                <th>Velocity</th>
+                <th>Found Postal</th>
+								<th>Suggested Solar Panel Configuration</th>
+								<th>Type of energy consumption</th>
+								<th>Interest in solar</th>
+								<th>Current solar trend in neighborhood</th>
+								<th>Probability of being home now</th>
+								<th>Notes</th>
+								<th>Action Button</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="user in userdata" ng-click="person_click( $index + 1 )">
+                    <td>{{ $index + 1 }}</td>
+                    <td>{{ user.full_name }}</td>
+                    <td>{{ user.demographics.age }}</td>
+                    <td>{{ user.demographics.gender }}</td>
+                    <td>{{ user.phone_number }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.location }}</td>
+                    <td>{{ user.time_subscribed }}</td>
+                    <td>{{ user.link_to_google_maps_location }}</td>
+                    <td>{{ user.lead_score }}</td>
+                    <td>{{ user.interests }}</td>
+                    <td>{{ user.education }}</td>
+                    <td>{{ user.demographics.occupation }}</td>
+                    <td>{{ user.demographics.home_owner_status }}</td>
+                    <td>{{ user.demographics.children }}</td>
+                    <td>{{ user.demographics.household_income }}</td>
+                    <td>{{ user.demographics.marital_status }}</td>
+                    <td>{{ user.demographics.velocity }}</td>
+                    <td>{{ user.found_postal.address1 }}, {{ user.found_postal.address2 }}, {{ user.found_postal.city }}, {{ user.found_postal.state }}, {{ user.location }}, {{ user.found_postal.zip }}</td>
+                    <td>{{ user.solar_panel }}</td>
+                    <td>{{ user.energy_consumption }}</td>
+                    <td>{{ user.interest_in_solar }}</td>
+                    <td>{{ user.neighborhood }}</td>
+                    <td>{{ user.probability }}</td>
+                    <td>{{ user.notes }}</td>
+                    <td><a href="#" class="label label-sm label-success">Call Now</a>&nbsp;&nbsp;<a href="#" class="label label-sm label-danger">Send Email</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

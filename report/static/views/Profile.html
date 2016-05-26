@@ -1,0 +1,106 @@
+<div class="row mbl" ng-controller="ProfileCtrl">
+    <div class="col-sm-6 col-md-3">
+        <div>
+            <div class="panel-body text-center">
+                <img src="{{ $root.pass_data.profile.profile_image }}">
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-md-5">
+        <div>
+            <div class="panel-body text-center">
+                <div class="name"><font size="12px;">{{ $root.pass_data.user.full_name }}</font></div>
+                <div><font size="4px;">Predicted Profile powered by SolFox</font></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-md-4">
+        <div>
+            <div class="panel-body text-center">
+                <div id="lead-score" style="width: 200px; height: 200px; margin: 0 auto"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="row mbl" ng-controller="ProfileCtrl">
+    <div class="col-sm-6 col-md-6">
+        <div class="panel profit db mbm">
+            <div class="panel-body">
+                <h2 style="text-decoration: underline;">Energy Consumption</h2>
+                <div class="col-xs-12 col-sm-8">
+                    <div id="container" style="width: 300px; height: 200px; margin: 0 auto"></div>
+                </div>
+                <div class="col-xs-12 col-sm-4 text-center">
+                    <img src="images/avatar/128.jpg" alt="" style="display: inline-block" class="img-responsive img-circle"/>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-md-6">
+        <div class="panel profit db mbm">
+            <div class="panel-body text-center">
+                <h2 style="text-decoration: underline;">Neighborhood</h2>
+                <div class="col-xs-12 col-sm-4">
+                    <div id="container" style="height: 200px; margin: 0 auto">
+                        <font size="3px;"> 23 neighbors with solar</font>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-8 text-center">
+                    <div style="width: 300px; height: 200px; margin: 0 auto">Map</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mbl" ng-controller="ProfileCtrl">
+    <div class="col-sm-6 col-md-6">
+        <div class="panel profit db mbm">
+            <div class="panel-body text-center">
+                <h2 style="text-decoration: underline;">Type of system</h2>
+                <div><font size='3px'>Estimated savings / price</font></div>
+                <br/>
+                <div class="col-xs-12 col-md-10">
+                    <div>
+                        <img src="images/system-icon.png"/>
+                        <span style="margin-left: 40px;">{{ $root.pass_data.profile.tpyeofsys.system.kw }}kW System</span>
+                        <input type="text" readonly value="${{ $root.pass_data.profile.tpyeofsys.system.price }}" style="text-align: center; margin-left: 30px; width: 150px;"/>
+                    </div>
+                    <div>
+                        <img src="images/lion-icon.png" alt=""/>
+                        <span style="margin-left: 40px;">{{ $root.pass_data.profile.tpyeofsys.lilon.kw }}kWh Li-lon</span>
+                        <input type="text" readonly value="${{ $root.pass_data.profile.tpyeofsys.lilon.price }}" style="text-align: center; margin-left: 30px; width: 150px;"/>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-10 text-center">
+                    <div id="system-cost" style="width: 300px; height: 200px; margin: 0 auto"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-md-6">
+        <div class="panel profit db mbm">
+            <div class="panel-body">
+                <h2 style="text-decoration: underline;">Interest in Solar</h2>
+                <br/>
+                <div class="col-xs-12 col-md-10">
+                    <font size='3px'>
+                        <div>Gender: {{ $root.pass_data.user.demographics.gender }}</div>
+                        <div>Age : {{ $root.pass_data.user.demographics.age }}</div>
+                        <div>Household: {{ $root.pass_data.user.demographics.children }} children</div>
+                    </font>
+                </div>
+                <div class="col-xs-12 col-md-12 text-center">
+                    <div id="interest" style="width: 450px; height: 200px; margin: 0 auto"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
